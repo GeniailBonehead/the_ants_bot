@@ -1,0 +1,40 @@
+from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+
+
+general_keyboard = InlineKeyboardMarkup(row_width=1)
+bones_btn = InlineKeyboardButton(text='Кости', callback_data='bones')
+insect_btn = InlineKeyboardButton(text='Дикое, но симпатичное', callback_data='insect')
+combat_btn = InlineKeyboardButton(text='Разное', callback_data='combat')
+general_btn = InlineKeyboardButton(text='Генералы', callback_data='ants')
+general_keyboard.add(bones_btn, insect_btn, combat_btn, general_btn)
+
+bones_keyboard = InlineKeyboardMarkup(row_width=1)
+bones_t10 = InlineKeyboardButton(text='t10', callback_data='t10')
+bones_t9 = InlineKeyboardButton(text='t9', callback_data='t9')
+bones_advanced = InlineKeyboardButton(text='Продвинутый', callback_data='advanced')
+zone_fight_keyboard = InlineKeyboardButton(text='Битва районов', callback_data='zone_fight')
+zone_develop_keyboard = InlineKeyboardButton(text='Развитие районов', callback_data='zone_develop')
+bones_keyboard.add(bones_t10, bones_t9, bones_advanced, zone_fight_keyboard, zone_develop_keyboard)
+
+insect_keyboard = InlineKeyboardMarkup(row_width=1)
+lvl_up = InlineKeyboardButton(text='Уровни', callback_data='lvl_up')
+food = InlineKeyboardButton(text='Жрачка', callback_data='food')
+mantis_talents = InlineKeyboardButton(text='Таланты богомола', callback_data='mantis_talents')
+atlas_talents = InlineKeyboardButton(text='Таланты атласа', callback_data='atlas_talents')
+scorpion_talents = InlineKeyboardButton(text='Таланты скорпиона', callback_data='scorpion_talents')
+spider_talents = InlineKeyboardButton(text='Таланты паука', callback_data='spider_talents')
+insect_keyboard.add(lvl_up, food)
+
+fight_keyboard = InlineKeyboardMarkup(row_width=1)
+combat = InlineKeyboardButton(text='Боевая скорость', callback_data='combat_speed')
+vip = InlineKeyboardButton(text='VIP', callback_data='vip')
+colony_actions = InlineKeyboardButton(text='Рассветы колонии', callback_data='colony_actions')
+fight_keyboard.add(combat, vip, colony_actions)
+
+ants_keyboard = InlineKeyboardMarkup(row_width=1)
+ants = InlineKeyboardButton(text='Улучшение генералов', callback_data='ant_skills')
+guardians_pvp = InlineKeyboardButton(text='Благословенная охрана', callback_data='guardians_pvp')
+shooters_pvp = InlineKeyboardButton(text='Ватные стрелки', callback_data='shooters_pvp')
+carriers_pvp = InlineKeyboardButton(text='Долбанные носители', callback_data='carriers_pvp')
+universal_pvp = InlineKeyboardButton(text='Ни рыба ни мясо', callback_data='universal_pvp')
+ants_keyboard.add(ants, guardians_pvp, shooters_pvp, carriers_pvp, universal_pvp)
