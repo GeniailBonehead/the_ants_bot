@@ -7,7 +7,7 @@ from traceback import format_exc
 import random
 
 
-debug = True
+debug = False
 NAME = 'ботяра'
 NAME_EN = 'botty'
 HATCH_ACTION = 'Рассвет на найм!\nSoldier hatch colony action!'
@@ -52,6 +52,7 @@ if not debug:
 
 bot = Bot(token='5595627731:AAF1cxvXSoqZEQRAYLozYnvtDWDMHtg6F9o')
 dp = Dispatcher(bot)
+message_to_send = ""
 
 
 async def send_message(message='Не спать!', channel_id=CHANNEL_ID):
@@ -75,6 +76,8 @@ async def scheduler():
         aioschedule.every().saturday.at(day.get('time')).do(send_message, message=day.get('message'))
     for day in sunday:
         aioschedule.every().sunday.at(day.get('time')).do(send_message, message=day.get('message'))
+    if message_to_send:
+        await bot.send_message(CHANNEL_ID, message_to_send)
     while True:
         try:
             await aioschedule.run_pending()
